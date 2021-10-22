@@ -1,0 +1,621 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-auto-rows: auto;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main";
+}
+
+h2, h3 {
+  margin: 15px;
+}
+
+/* =================================================
+  header
+==================================================== */
+
+header {
+  background: #8377d1fd;
+  color: #f5f5f5;
+  font-size: 10px;
+  padding: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  grid-area: header;
+}
+
+#header-elements {
+  display: inline-flex;
+
+}
+
+.bell {
+  height: 30px;
+  fill: #f5f5f5;
+  margin-top: 10px;
+  transition: .3s ease-out;
+}
+
+
+.bell:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+
+}
+
+.alert-ball {
+  height: 10px;
+  width: 10px;
+  background-color: #78CF82;
+  border: solid #78CF82;
+  border-radius: 50%;
+}
+
+.user {
+  border-left: 1px solid #ccc;
+  padding-left: 10px;
+  margin-left: 15px;
+  display: flex;
+}
+
+.user img {
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-name {
+  margin-top : 17.5px;
+  font-size: 150%;
+  font-weight: bolder;
+}
+
+/* =================================================
+  navigation bar
+==================================================== */
+
+nav {
+  background: #564d8ffd;
+  height: 60px;
+  width: 100%;
+  grid-area: nav;
+}
+
+.icon-container {
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.icon {
+  height: 50px;
+  fill: #f5f5f5;
+  transition: .3s ease-out;
+
+}
+
+.icon:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+/* =================================================
+   main
+==================================================== */
+
+main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-template-areas:
+  "main-header"
+  "traffic"
+  "daily-traffic"
+  "mobile-users"
+  "social-stats"
+  "new-members"
+  "recent-activity"
+  "message"
+  "settings";
+}
+
+/* .main-headr, .dashboard, .daily-traffic, .mobile-users, .social-stats,
+.new-members , .recent-activity, .message, .settings {
+  grid-column-start: 1;
+  grid-column-end: 2;
+} */
+
+.main-header {
+ display: flex;
+ flex-direction: column;
+ grid-area: main-header;
+}
+
+.dashboard {
+  display: inline-flex;
+  margin-bottom: 15px;
+}
+
+.filler {
+  width: 100%;
+  background-color: #f7fdff;
+  border-bottom: 1px solid #d4d4d4;
+  border-left: 1px solid #d4d4d4;
+}
+
+.alert {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 8px;
+  padding-left: 15px;
+  background: #8377d1fd;
+  margin: 0px 15px 15px;
+  height: 50px;
+}
+
+.alert span {
+  color: #f5f5f5;
+  padding: 15px;
+}
+
+.alertBannerClose {
+  padding-right: 15px;
+}
+
+.alertBannerClose:hover {
+  cursor: pointer;
+}
+
+.traffic {
+  grid-area: traffic;
+  margin: 20px;
+}
+
+.daily-traffic {
+  grid-area: daily-traffic;
+  border-top: 1px solid #d4d4d4;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-users {
+  grid-area: mobile-users;
+  border-top: 1px solid #d4d4d4;
+  border-bottom: 1px solid #d4d4d4;
+  border-left: 1px solid #d4d4d4;
+  display: flex;
+}
+
+.social-stats {
+  grid-area: social-stats;
+  border-bottom: 1px solid #d4d4d4;
+  padding-bottom: 10px;
+}
+
+#new-members {
+  grid-area: new-members;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.recent-activity {
+  grid-area: recent-activity;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.message {
+  grid-area: message;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+#settings {
+  grid-area: settings;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 1px solid #d4d4d4;
+}
+
+/* =================================================
+  Widget containers
+==================================================== */
+
+.line-widget {
+  width: 90vw;
+}
+
+.bar-widget{
+  width: 90vw;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.doughnut-widget {
+  width:  65vw;
+  display: block;
+  align-items: center;
+  margin-right: 40px;
+}
+
+
+/* =================================================
+  Traffic
+==================================================== */
+
+.traffic-nav {
+  list-style: none;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: row;
+}
+
+.traffic-nav-link {
+  margin-right: 30px;
+  padding: 10px;
+}
+
+.traffic-nav-link-selected {
+  margin-right: 10px;
+  margin-left: -20px;
+  height: 200%;
+  padding: 10px 20px;
+  background-color: #78CF82;
+  color: #fff;
+  border-radius: 30px;
+}
+
+/* =================================================
+   Social stats
+==================================================== */
+
+.social-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  fill: #8377d1fd;
+}
+
+.facebook, .instagram, .twitter {
+  display: inline-flex;
+  border: solid 2px #d4d4d4;
+  border-radius: 10px;
+  margin: 5px 10px;
+  padding: 25px;
+  background-color: #f7fdff;
+  width: 100%;
+  height: 150px;
+}
+
+.logo {
+  height: 100px;
+  fill: #8377d1fd;
+}
+
+.social-text {
+  margin-left: 20px;
+}
+
+.logo-name {
+  font-size: 24px;
+  color: #8377d1fd;
+}
+
+.tally {
+  font-size: 48px;
+  color: grey;
+}
+
+/* =================================================
+   New Members & Recent Activity
+==================================================== */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+
+.image-and-text, .text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  margin: 2px;
+}
+
+/* horizontal line style adapted from https://stackoverflow.com/questions/14821087/horizontal-line-and-right-way-to-code-it-in-html-css */
+hr {
+  display: block;
+    height: 1px;
+    width: 90%;
+    border: 0;
+    border-top: 1px solid #ccc;
+    padding: 0;
+}
+
+.profile-image {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.arrow {
+  color: #8377d1fd;
+  display: none;
+  font-size: 24px;
+}
+
+/* =================================================
+   Message User
+==================================================== */
+
+#user-search {
+  border: solid 1px #d4d4d4;
+  border-radius: 5px;
+  font-size: 18px;
+  height: 60px;
+  margin: 0px 20px 10px 20px;
+  padding: 15px;
+  background-color: #f7fdff;
+}
+
+textarea {
+  border: solid 1px #d4d4d4;
+  border-radius: 5px;
+  font-size: 18px;
+  height: 180px;
+  margin: 10px 20px;
+  padding: 15px;
+  background-color: #f7fdff;
+}
+
+button {
+  margin: 10px 20px;
+  height: 50px;
+  color: #fff;
+  background-color: #8377d1fd;
+  border: 1px solid #d4d4d4;
+  padding: 10px 0;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+#send {
+  cursor: pointer;
+}
+
+#send:hover {
+  background-color: #bdafd9;
+}
+
+/* =================================================
+   Settings
+==================================================== */
+
+#settings h3 {
+  margin-bottom: 0;
+}
+
+/* toggle-switch.css styles from https://ghinda.net/css-toggle-switch/index.html */
+.switch {
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+
+}
+.switch-label-a {
+  margin: 25px 15px;
+}
+
+.switch-label-b {
+  margin: 25px 50px 25px 15px;
+}
+
+.slider-length {
+  color: #fff;
+}
+
+#timezone {
+  width: auto;
+  height: 60px;
+  margin: 15px 10px;
+  padding: 15px;
+  border: 1px solid #d4d4d4;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: lighter;
+  background-color: #f7fdff;
+}
+
+.button-holder {
+  display: inline-flex;
+}
+
+.save {
+  width: 50%;
+  margin: 10px;
+}
+
+.cancel {
+  background-color: grey;
+  width: 50%;
+  margin: 10px;
+}
+
+/* =================================================
+   Media Queries
+==================================================== */
+
+@media (min-width: 768px) {
+
+  nav {
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+
+  }
+
+  .icon-container {
+    margin-top: 5px;
+    flex-direction: column;
+    /* Sticky style found at https://www.tutorialspoint.com/online_html_editor.php */
+    position: sticky;
+    overflow: hidden;
+    top: 0;
+  }
+
+  .icon {
+    margin: 10px 15px 15px 20px;
+  }
+
+  .wrapper {
+    grid-template-columns: 90px 1fr;
+    grid-template-areas:
+    "header header"
+    "nav main";
+  }
+
+  #search {
+    width: 450px;
+  }
+
+  main {
+    grid-template-columns: 50%;
+    grid-template-areas:
+    "main-header main-header"
+    "traffic traffic"
+    "daily-traffic mobile-users"
+    "social-stats social-stats"
+    "new-members new-members"
+    "recent-activity recent-activity"
+    "message message"
+    "settings settings";
+  }
+
+  /* Alternative grid layout method */
+
+  /* .main-header, .traffic, .social-stats, .new-members, .recent-activity,
+  .message, .settings {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .daily-traffic {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    background-color: green;
+  }
+
+  .mobile-users {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    background-Color: blue;
+  } */
+
+  .bar-widget {
+    width: 40vw;
+  }
+
+  .doughnut-widget {
+    width: 25vw;
+  }
+
+  .daily-traffic {
+    border-bottom: 1px solid #d4d4d4;
+  }
+
+
+  .social-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .image-and-text {
+    flex-direction: row;
+  }
+
+  .text {
+    align-items: flex-start;
+    padding-left: 15px;
+  }
+
+  .arrow {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  main {
+    grid-template-areas:
+    "main-header main-header"
+    "traffic traffic"
+    "daily-traffic mobile-users"
+    "social-stats social-stats"
+    "new-members recent-activity"
+    "message settings";
+  }
+
+  /* Alternative grid layout method */
+
+  /* .main-header, .traffic, .social-stats {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .daily-traffic, .new-members, .message {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .mobile-users, {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+
+  .recent-activity {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 6;
+    grid-row-end: 7;
+  }
+
+  .settings {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 8;
+    grid-row-end: 9;
+  } */
+
+}
